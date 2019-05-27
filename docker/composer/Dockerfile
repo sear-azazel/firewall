@@ -1,5 +1,5 @@
 FROM php:7.3.5-fpm-alpine
-LABEL maintainer "ucan"
+LABEL maintainer "sear-azazel"
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV COMPOSER_HOME /composer

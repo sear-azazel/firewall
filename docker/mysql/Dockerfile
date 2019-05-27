@@ -1,5 +1,5 @@
 FROM mysql:8.0.16
-LABEL maintainer "ucan"
+LABEL maintainer "sear-azazel"
 
 COPY mysql.cnf /etc/mysql/conf.d/mysql.cnf
 RUN set -eux && \
