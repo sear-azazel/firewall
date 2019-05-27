@@ -2,6 +2,7 @@ version: "3"
 services:
   web:
     image: nginx:alpine
+    container_name: web
     depends_on:
       - app
     ports:
@@ -13,6 +14,7 @@ services:
 
   app:
     build: ./docker/php
+    container_name: app
     ports:
       - ${LARAVEL_SERVER_PORT}:8000
     volumes:
@@ -23,12 +25,14 @@ services:
 
   composer:
     build: ./docker/composer
+    container_name: composer
     volumes:
       - ${PROJECT_PATH}:/work
     working_dir: /work
 
   db:
     build: ./docker/mysql
+    container_name: db
     volumes:
       - db-data:/var/lib/mysql
       - ./logs:/var/log/mysql
